@@ -11,7 +11,9 @@ import (
 
 // checkError check errors
 func checkError(err error) {
-	log.Fatal(err)
+	if err != nil {
+		log.Fatal(err)
+	}
 }
 
 func main() {
@@ -24,31 +26,34 @@ func main() {
 		{
 			Name:  "run",
 			Usage: "Run service",
-			Action: func(c *cli.Context) {
+			Action: func(c *cli.Context) error {
 				coreSvc, err := core.NewService()
 				checkError(err)
 				err = coreSvc.Run()
 				checkError(err)
+				return nil
 			},
 		},
 		{
 			Name:  "droptables",
 			Usage: "Drop database tables",
-			Action: func(c *cli.Context) {
+			Action: func(c *cli.Context) error {
 				coreSvc, err := core.NewService()
 				checkError(err)
 				err = coreSvc.DropTables()
 				checkError(err)
+				return nil
 			},
 		},
 		{
 			Name:  "migrate",
 			Usage: "Migrate database",
-			Action: func(c *cli.Context) {
+			Action: func(c *cli.Context) error {
 				coreSvc, err := core.NewService()
 				checkError(err)
 				err = coreSvc.Migrate()
 				checkError(err)
+				return nil
 			},
 		},
 	}
