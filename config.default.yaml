@@ -1,0 +1,21 @@
+debug: false
+
+rpc:
+  app_host: localhost
+  app_port: 1234
+
+db:
+  db_user: user
+  db_pass: pass
+  db_host: host
+  db_port: 5432
+  db_name: name
+
+instagram:
+  timeout_min: 500
+  timeout_max: 2000
+  users:
+  - username: login
+    password: pass
+  - username: login
+    password: pass
