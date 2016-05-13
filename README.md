@@ -22,6 +22,8 @@ go build && go-instagram-bot
 ### Packages:
 You can use [glide](https://glide.sh/) packages manager to get all needed packages.
 ```
+go get -u -v github.com/Masterminds/glide
+
 cd go-instagram-bot && glide install
 ```
 
