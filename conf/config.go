@@ -35,24 +35,18 @@ func (cm *ConfigManager) Load() (*Config, error) {
 // Config struct
 type Config struct {
 	Debug     bool      `yaml:"debug"`
-	RPC       RPC       `yaml:"rpc"`
 	Db        Db        `yaml:"db"`
 	Instagram Instagram `yaml:"instagram"`
 }
 
-// RPC struct
-type RPC struct {
-	AppHost string `yaml:"app_host"`
-	AppPort int    `yaml:"app_port"`
-}
-
 // Db struct
 type Db struct {
-	DbUser     string `yaml:"db_user"`
-	DbPassword string `yaml:"db_pass"`
-	DbHost     string `yaml:"db_host"`
-	DbPort     string `yaml:"db_port"`
-	DbName     string `yaml:"db_name"`
+	Driver   string `yaml:"driver"`
+	User     string `yaml:"user"`
+	Password string `yaml:"pass"`
+	Host     string `yaml:"host"`
+	Port     string `yaml:"port"`
+	Name     string `yaml:"name"`
 }
 
 // Instagram struct
@@ -60,7 +54,7 @@ type Instagram struct {
 	TimeoutMin int `yaml:"timeout_min"`
 	TimeoutMax int `yaml:"timeout_max"`
 	Users      []struct {
-		Username string `yaml:"username"`
+		Name     string `yaml:"name"`
 		Password string `yaml:"password"`
 	} `yaml:"users"`
 }

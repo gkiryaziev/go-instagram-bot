@@ -19,17 +19,17 @@ func checkError(err error) {
 func main() {
 	app := cli.NewApp()
 	app.Name = "IBot"
-	app.Usage = "Instagram news bot"
+	app.Usage = "Instagram bot"
 	app.Version = "0.1.3"
 
 	app.Commands = []cli.Command{
 		{
 			Name:  "run",
-			Usage: "Run service",
+			Usage: "Run bot",
 			Action: func(c *cli.Context) error {
-				coreSvc, err := core.NewService()
+				coreService, err := core.NewService()
 				checkError(err)
-				err = coreSvc.Run()
+				err = coreService.Run()
 				checkError(err)
 				return nil
 			},
@@ -38,9 +38,9 @@ func main() {
 			Name:  "droptables",
 			Usage: "Drop database tables",
 			Action: func(c *cli.Context) error {
-				coreSvc, err := core.NewService()
+				coreService, err := core.NewService()
 				checkError(err)
-				err = coreSvc.DropTables()
+				err = coreService.DropTables()
 				checkError(err)
 				return nil
 			},
@@ -49,9 +49,9 @@ func main() {
 			Name:  "migrate",
 			Usage: "Migrate database",
 			Action: func(c *cli.Context) error {
-				coreSvc, err := core.NewService()
+				coreService, err := core.NewService()
 				checkError(err)
-				err = coreSvc.Migrate()
+				err = coreService.Migrate()
 				checkError(err)
 				return nil
 			},

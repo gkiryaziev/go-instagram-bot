@@ -11,9 +11,6 @@ import (
 
 	"github.com/jinzhu/gorm"
 
-	// postgresql driver
-	_ "github.com/lib/pq"
-
 	"github.com/gkiryaziev/go-instagram-bot/conf"
 	"github.com/gkiryaziev/go-instagram-bot/db"
 	"github.com/gkiryaziev/go-instagram-bot/models"
@@ -45,13 +42,14 @@ func NewService() (*Service, error) {
 	}
 
 	// open database connection
-	database, err := db.Connect(
-		config.Db.DbUser,
-		config.Db.DbPassword,
-		config.Db.DbHost,
-		config.Db.DbPort,
-		config.Db.DbName,
-	)
+	database, err := db.NewDatabase(
+		config.Db.Driver,
+		config.Db.User,
+		config.Db.Password,
+		config.Db.Host,
+		config.Db.Port,
+		config.Db.Name,
+	).Connnect()
 	if err != nil {
 		return nil, err
 	}
@@ -81,7 +79,7 @@ func (cs *Service) DropTables() error {
 		return err
 	}
 
-	log.Println("Drop Tables: success.")
+	log.Println("Dropping tables done successfully.")
 
 	return nil
 }
@@ -96,7 +94,7 @@ func (cs *Service) Migrate() error {
 		return err
 	}
 
-	log.Println("Migration: success.")
+	log.Println("Migration done successfully.")
 
 	return nil
 }
@@ -118,7 +116,7 @@ func (cs *Service) Run() error {
 	// open connection and append connections pool
 	for _, user := range cs.cfg.Instagram.Users {
 		api, err := instagram.NewInstagram(
-			user.Username,
+			user.Name,
 			user.Password,
 		)
 		if err != nil {

@@ -1,21 +1,18 @@
-debug: false
-
-rpc:
-  app_host: localhost
-  app_port: 1234
+debug: true
 
 db:
-  db_user: user
-  db_pass: pass
-  db_host: host
-  db_port: 5432
-  db_name: name
+  driver: mysql       # mysql, postgres
+  user:   admin
+  pass:   admin
+  host:   localhost
+  port:   3306        # 3306, 5432
+  name:   db
 
 instagram:
-  timeout_min: 500
-  timeout_max: 2000
+  timeout_min: 1000   # ms
+  timeout_max: 3000   # ms
   users:
-  - username: login
-    password: pass
-  - username: login
-    password: pass
+  - name:     login
+    password: password
+  - name:     login
+    password: password

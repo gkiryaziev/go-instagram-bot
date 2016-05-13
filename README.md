@@ -1,8 +1,8 @@
-## Instagram News Bot
+## Instagram Bot
 
 ---
 
-This bot will check all news in your Instagram accounts and record all activity in the database.
+This bot will check all recent activity in your Instagram accounts and record all data in the database.
 
 ### Installation:
 ```
@@ -17,6 +17,12 @@ Copy `config.default.yaml` to `config.yaml` and edit configuration.
 ### Build and Run:
 ```
 go build && go-instagram-bot
+```
+
+### Packages:
+You can use [glide](https://glide.sh/) packages manager to get all needed packages.
+```
+cd go-instagram-bot && glide install
 ```
 
 ### Usage

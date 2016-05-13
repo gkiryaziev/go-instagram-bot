@@ -1,0 +1,37 @@
+hash: f2b0e3e0ce3c6e9b30aa4fdd1269312fb4c38130b3c6f244e9b4835ae7af7877
+updated: 2016-05-13T15:25:28.1185389+03:00
+imports:
+- name: github.com/codegangsta/cli
+  version: 7f0ca9a34958d6702ac8f38530d19001fa5b1560
+  subpackages:
+  - github.com\codegangsta\cli
+- name: github.com/gkiryaziev/go-instagram
+  version: c548a7506cdcc5e74b5b6d5914f2d4b9ce9f45c5
+  subpackages:
+  - github.com\gkiryaziev\go-instagram
+- name: github.com/go-sql-driver/mysql
+  version: 7ebe0a500653eeb1859664bed5e48dec1e164e73
+  subpackages:
+  - github.com\go-sql-driver\mysql
+- name: github.com/jinzhu/gorm
+  version: 57c72125b3087e1ed02c16f23a1f381cde3aaf2c
+  subpackages:
+  - github.com\jinzhu\gorm
+- name: github.com/jinzhu/inflection
+  version: 3272df6c21d04180007eb3349844c89a3856bc25
+  subpackages:
+  - github.com\jinzhu\inflection
+- name: github.com/lib/pq
+  version: ee1442bda7bd1b6a84e913bdb421cb1874ec629d
+  subpackages:
+  - github.com\lib\pq
+  - github.com\lib\pq\oid
+- name: github.com/pborman/uuid
+  version: c55201b036063326c5b1b89ccfe45a184973d073
+  subpackages:
+  - github.com\pborman\uuid
+- name: gopkg.in/yaml.v2
+  version: a83829b6f1293c91addabc89d0571c246397bbf4
+  subpackages:
+  - gopkg.in\yaml.v2
+devImports: []
