@@ -2,6 +2,8 @@
 
 ---
 
+[![Go Report Card](https://goreportcard.com/badge/github.com/gkiryaziev/go-instagram-bot)](https://goreportcard.com/report/github.com/gkiryaziev/go-instagram-bot)
+
 This bot will check all recent activity in your Instagram accounts and record all data in the database.
 
 ### Installation:
